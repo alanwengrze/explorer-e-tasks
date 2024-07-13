@@ -10,8 +10,14 @@ import { Priorities } from "../../components/Priorities";
 import { Container, FixedContent } from "./styles";
 
 export function Home() {
+
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState("all");
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  function toggleMenu() {
+    setMenuIsOpen(!menuIsOpen);
+  }
 
   useEffect(() => {
     switch (filter) {
@@ -26,10 +32,15 @@ export function Home() {
 
   return (
     <Container>
-      <SideMenu />
+      <SideMenu 
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={toggleMenu}
+      />
 
       <FixedContent>
-        <Header />
+        <Header 
+          onOpenMenu={toggleMenu}
+        />
         <Priorities />
         <Search setFilter={setFilter} filter={filter} />
       </FixedContent>

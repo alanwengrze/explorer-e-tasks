@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding: 0 32px;
+  padding: 0 3.2rem;
 `;
 
 export const Filters = styled.div`
-  margin-top: 40px;
+  margin-top: 4rem;
   display: flex;
-  gap: 16px;
-  margin-right: 10px;
+  gap: 1.4rem;
+  margin-right: 1rem;
 
   border-bottom-width: 1px;
   border-bottom-style: solid;

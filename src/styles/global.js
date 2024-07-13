@@ -1,10 +1,24 @@
 import { createGlobalStyle } from "styled-components";
+import { LAYOUT_BREAKPOINTS } from "./layoutBreakpoints";
 
 export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  :root {
+    font-size: 62.5%;
+
+    @media (max-width: ${LAYOUT_BREAKPOINTS.MD}) {
+      transition: 0.3s ease-in-out;
+      body {
+        font-size: 1.2rem;
+        transition: 0.3s ease-in-out;
+      }
+      
+    }
   }
 
   body {
@@ -16,7 +30,7 @@ export default createGlobalStyle`
 
   body, input, button, textarea {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
     outline: none;
   }
 
@@ -34,7 +48,8 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.8rem;
+    height: 0.8rem;
   }
   
   ::-webkit-scrollbar-track {
